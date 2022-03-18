@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import main from '@/components/mainpage.vue'
+import first from '@/components/1.vue'
+import second from '@/components/2.vue'
 
 Vue.use(VueRouter)
 
@@ -26,4 +29,24 @@ const router = new VueRouter({
   routes
 })
 
-export default router
+export default new VueRouter({
+  routes: [
+    {
+      path: '/',
+      name: 'back-to-main',
+      component: main
+    },
+    {
+      path: '/first-page',
+      name: 'first-set',
+      component: first
+    },
+    {
+      path: '/second-page',
+      name: 'second-set',
+      component: second
+    }
+  ]
+})
+
+
